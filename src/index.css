@@ -1,13 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* root css start */
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  @apply m-0 p-0 box-border;
+}
+/* root css end */
+
+/* common css start */
+.flex-center {
+  @apply flex justify-center items-center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.text-gradient {
+  @apply bg-gradient-to-l from-[#610781] to-[#C12CFF];
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+/* common css end */
+
+/* header start */
+.top-header {
+  @apply w-full flex justify-between text-white font-bold bg-gradient-to-l from-[#610781] to-[#C12CFF]
+  p-2.5;
+}
+
+.main-header {
+  @apply w-full flex justify-around font-bold uppercase p-4;
+}
+
+.header-logo img {
+  @apply w-[250px] h-[55px] mt-1;
+}
+
+.middle-header ul {
+  @apply flex;
+}
+.middle-header ul li {
+  @apply m-5;
+}
+
+.right-header {
+  @apply flex-center;
+}
+/* header end */
+
+/* hero section start */
+.hero-root::before {
+  content: "";
+  background: url(../public/hero.png) no-repeat center center/cover;
+  position: absolute;
+  width: 100vw;
+  height: 600px;
+  z-index: -1;
+}
+
+.hero-content {
+  @apply w-[450px] h-[500px] ml-auto text-white text-center;
+}
+
+.hero-content-heading {
+  @apply text-6xl font-extrabold italic uppercase;
+}
+.hero-content-sub-heading {
+  @apply text-xl font-[600] italic uppercase;
+}
+/* hero section end */
+
+/* best products section start */
+.root-products {
+  @apply flex-center flex-col;
+}
+
+.product-heading-main {
+  @apply text-base text-center uppercase italic font-normal mt-40;
+}
+.product-heading1 {
+  @apply text-3xl font-semibold;
+}
+.product-heading2 {
+  @apply text-5xl font-extrabold tracking-tight text-gradient;
+}
+
+.product-card-section {
+  @apply flex-center gap-8 m-20;
+}
+
+.product-card {
+  @apply w-[400px] flex-center flex-col border border-solid border-gray-200 rounded-lg font-bold italic uppercase px-6 py-10;
+}
+
+.card-image img {
+  @apply w-[256px] h-[270px];
+}
+
+.card-content {
+  @apply w-full flex justify-between text-xl font-extrabold;
+}
+
+.card-count-buttons {
+  @apply w-[350px] flex justify-between text-sm mt-5;
+}
+
+.card-count-button1 {
+  @apply py-2 px-8 bg-black text-white;
+}
+.card-count-button2 {
+  @apply py-2.5 px-8 bg-[#F4F4F4];
+}
+
+.add-to-cart-button {
+  @apply w-[350px] text-white bg-gradient-to-l from-[#610781] to-[#C12CFF] py-2.5 px-8 mt-5;
+  transform: skew(-20deg);
+}
+
+/* best products section end */
+
+/* why bounce section start */
+.why-bounce-root {
+  @apply bg-[#F4F4F4] p-20;
+}
+
+.left-why-bounce {
+  @apply max-w-[714px];
+}
+
+.why-bounce-heading {
+  @apply text-5xl font-extrabold italic uppercase;
+}
+
+.why-bounce-heading span {
+  @apply text-gradient;
+}
+
+.why-bounce-content {
+  @apply text-lg text-[#4E4E4E] mt-4;
+}
+/* why bounce section end */
